@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Завдання</title>
+</head>
+
+<body>
+  <script>
+    // 1. Піднесення числа до другого степеня
+    let numberToSquare = parseInt(prompt("Будь ласка, введіть число наприклад 2:"));
+    let squaredNumber = Math.pow(numberToSquare, 2);
+    alert("Результат піднесення числа " + numberToSquare + " до другого степеня: " + squaredNumber);
+
+    // 2. Середнє арифметичне
+    let num1 = parseInt(prompt("Будь ласка, введіть перше число:"));
+    let num2 = parseInt(prompt("Будь ласка, введіть друге число:"));
+    let average = (num1 + num2) / 2;
+    alert("Середнє арифметичне введених чисел: " + average);
+
+    // 3. Площа квадрата
+    let sideLength = parseInt(prompt("Будь ласка, введіть довжину сторони квадрата:"));
+    let area = sideLength * sideLength;
+    alert("Площа квадрата: " + area);
+
+    // 4. Конвертор кілометрів у милі
+    const KILOMETER_TO_MILE = 0.621371;
+    let kilometers = parseFloat(prompt("Будь ласка, введіть кількість кілометрів:"));
+    let miles = kilometers * KILOMETER_TO_MILE;
+    alert(kilometers + " км = " + miles + " миль");
+
+    // 5. Калькулятор
+    let numA = parseFloat(prompt("Будь ласка, введіть перше число:"));
+    let numB = parseFloat(prompt("Будь ласка, введіть друге число:"));
+    let sum = numA + numB;
+    let difference = numA - numB;
+    let product = numA * numB;
+    let quotient = numA / numB;
+    alert("Сума: " + sum + "\nРізниця: " + difference + "\nДобуток: " + product + "\nЧастка: " + quotient);
+
+    // 6. Розв'язання рівняння a * x + b = 0
+    let a = parseFloat(prompt("Будь ласка, введіть значення a:"));
+    let b = parseFloat(prompt("Будь ласка, введіть значення b:"));
+    let x = -b / a;
+    alert("Результат рівняння " + a + " * x + " + b + " = 0: x = " + x);
+
+    // 7. Розрахунок часу до наступного дня
+    let currentHour = parseInt(prompt("Будь ласка, введіть поточний години:"));
+    let currentMinute = parseInt(prompt("Будь ласка, введіть поточні хвилини:"));
+    let remainingHours = 23 - currentHour;
+    let remainingMinutes = 60 - currentMinute;
+    alert("До наступного дня залишилось " + remainingHours + " годин і " + remainingMinutes + " хвилин.");
+
+    // 8. Виведення другої цифри тризначного числа
+    let threeDigitNumber = parseInt(prompt("Будь ласка, введіть тризначне число:"));
+    let secondDigit = Math.floor((threeDigitNumber / 10) % 10);
+    alert("Друга цифра у введеному числі: " + secondDigit);
+
+    // 9. Переміщення останньої цифри на початок п'ятизначного числа
+    let fiveDigitNumber = parseInt(prompt("Будь ласка, введіть п'ятизначне число:"));
+    let lastDigit = fiveDigitNumber % 10;
+    let remainingDigits = Math.floor(fiveDigitNumber / 10);
+    let newNumber = parseInt(lastDigit.toString() + remainingDigits.toString());
+    alert("Число після переміщення останньої цифри на початок: " + newNumber);
+
+    // 10. Зарплата працівника
+    let totalSales = parseFloat(prompt("Будь ласка, введіть загальну суму продажу за місяць:"));
+    let salary = 250 + 0.1 * totalSales;
+    alert("Зарплата працівника: $" + salary.toFixed(2));
+
+    // 1. Привітання з ім'ям користувача
+    let userName = prompt("Будь ласка, введіть своє ім'я:")
+    alert('Привіт, ' + userName + '!')
+
+    // 2. Обчислення віку користувача з урахуванням місяця та дня народження
+    let currentYear = new Date().getFullYear()
+    let currentMonth = new Date().getMonth() + 1 // Додаємо 1, оскільки місяці у JavaScript нумеруються з 0
+    let currentDay = new Date().getDate()
+
+    let birthYear = parseInt(prompt('Будь ласка, введіть свій рік народження:'))
+    let birthMonth = parseInt(
+      prompt('Будь ласка, введіть місяць народження (від 1 до 12):')
+    )
+    let birthDay = parseInt(prompt('Будь ласка, введіть день народження:'))
+
+    // Перевірка, чи вже був день народження в поточному році
+    let age = currentYear - birthYear
+    if (
+      birthMonth > currentMonth ||
+      (birthMonth === currentMonth && birthDay > currentDay)
+    ) {
+      age-- // Якщо день народження ще не настав у цьому році, вік потрібно зменшити на 1
+    }
+
+    alert('Вам ' + age + ' років.')
+
+    // 3. Периметр квадрата
+    let squareSideLength = parseFloat(
+      prompt('Будь ласка, введіть довжину сторони квадрата:')
+    )
+    let perimeter = 4 * squareSideLength
+    alert('Периметр квадрата: ' + perimeter)
+
+    // 4. Площа кола
+    const PI = Math.PI
+    let circleRadius = parseFloat(prompt('Будь ласка, введіть радіус кола:'))
+    let area2 = PI * circleRadius * circleRadius
+    alert('Площа кола: ' + area2)
+
+    // 5. Обчислення швидкості руху
+    let distance = parseFloat(
+      prompt('Будь ласка, введіть відстань між двома містами у кілометрах:')
+    )
+    let time = parseFloat(prompt('За скільки годин ви хочете дістатися?'))
+    let speed = distance / time
+    alert(
+      'Щоб дістатися вчасно, потрібно рухатися зі швидкістю ' + speed + ' км/год.'
+    )
+
+    // 6. Конвертер валют доллар в євро
+    const EXCHANGE_RATE1 = 0.9 // 1 долар = 0.9 євро
+    let dollars = parseFloat(prompt('Будь ласка, введіть кількість доларів:'))
+    let euros = Math.round(dollars * EXCHANGE_RATE1)
+    alert(dollars + ' доларів = ' + euros + ' євро')
+
+    // 6.2 Конвертер валют євро в грн
+    const EXCHANGE_RATE2 = 42.3 // 1 євро = 42.3 грн
+    let euro = parseFloat(prompt('Будь ласка, введіть кількість євро:'))
+    let uan = Math.round(euro * EXCHANGE_RATE2)
+    alert(euro + ' євро = ' + uan + ' грн')
+
+    // 7. Розрахунок кількості файлів на флешці
+    let flashDriveCapacityGB = parseFloat(
+      prompt("Будь ласка, введіть об'єм флешки у гігабайтах:")
+    )
+    let fileCapacityMB = 820 // розмір файлу у мегабайтах
+    let filesCount = Math.floor((flashDriveCapacityGB * 1024) / fileCapacityMB) // переведення ГБ в МБ та розрахунок кількості файлів
+    alert(
+      "На флешці з об'ємом " +
+      flashDriveCapacityGB +
+      ' ГБ поміститься ' +
+      filesCount +
+      ' файлів розміром ' +
+      fileCapacityMB +
+      ' МБ.'
+    )
+
+    // 8. Покупка шоколадок
+    let walletAmount = parseFloat(
+      prompt('Будь ласка, введіть суму грошей у гаманці:')
+    )
+    let chocolatePrice = parseFloat(
+      prompt('Будь ласка, введіть вартість однієї шоколадки:')
+    )
+    let chocolateCount = Math.floor(walletAmount / chocolatePrice) // ціле число шоколадок, які можна купити
+    let change = walletAmount % chocolatePrice // залишок грошей після покупки шоколадок
+    alert(
+      'Ви можете купити ' +
+      chocolateCount +
+      ' шоколадок і у вас залишиться ' +
+      change +
+      ' грошей.'
+    )
+
+    // 9. Виведення паліндрому тризначного числа
+    let threeDigitNumber3 = parseInt(prompt('Будь ласка, введіть тризначне число:'))
+    let reversedNumber = parseInt(
+      threeDigitNumber3.toString().split('').reverse().join('')
+    ) // перевертаємо число
+    alert('Число-паліндром: ' + reversedNumber)
+
+    // 9.2 Виведення слова-паліндрому
+    let word = prompt("Будь ласка, введіть слово:");
+    let reversedWord = word.split('').reverse().join('');
+    alert("Слово-перевертень: " + reversedWord);
+
+    // 10. Визначення парності числа
+    let userNumber = parseInt(prompt('Будь ласка, введіть ціле число:'))
+    let isEven = userNumber % 2 === 0 // перевірка на парність
+    let result = isEven ? 'парне' : 'непарне' // визначення результату
+    alert('Введене число є ' + result + '.')
+
+
+  </script>
+</body>
+
+</html>
